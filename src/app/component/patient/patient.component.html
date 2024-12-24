@@ -1,0 +1,46 @@
+<div class="container">
+  <h2>Employee Management</h2>
+
+  <div *ngIf="formGroup">
+    <form [formGroup]="formGroup">
+      <div>
+        <input  placeholder="Id" formControlName="id" />
+      </div>
+      <div>
+        <input  placeholder="Name"  formControlName="name"/>
+      </div>
+      <div>
+        <input   placeholder="mobile"  formControlName="mobile"/>
+      </div>
+      <div>
+        <input   placeholder="bloodgroup" formControlName="bloodgroup"/>
+      </div>
+      <div>
+        <input   placeholder="address" formControlName="address"/>
+      </div>
+      <div>
+        <input   placeholder="hospital" formControlName="hospital"/>
+      </div>
+      <button (click)="saveData()">Save</button>
+      <!--    <button type="button" (click)="resetForm()">Reset</button>-->
+    </form>
+  </div>
+
+  <table>
+    <tr>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Position</th>
+      <th>Actions</th>
+    </tr>
+    <!--<tr *ngFor="let employee of employees">
+      <td>{{ employee.name }}</td>
+      <td>{{ employee.email }}</td>
+      <td>{{ employee.position }}</td>
+      <td>
+        <button (click)="selectEmployee(employee)">Edit</button>
+        <button (click)="deleteEmployee(employee.id!)">Delete</button>
+      </td>
+    </tr>-->
+  </table>
+</div>

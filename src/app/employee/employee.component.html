@@ -1,0 +1,35 @@
+<div class="container">
+  <h2>Employee Management</h2>
+
+  <form (ngSubmit)="addOrUpdateEmployee()">
+    <div>
+      <input [(ngModel)]="selectedEmployee.name" name="name" placeholder="Name" required />
+    </div>
+    <div>
+      <input [(ngModel)]="selectedEmployee.email" name="email" placeholder="Email" required />
+    </div>
+    <div>
+      <input [(ngModel)]="selectedEmployee.position" name="position" placeholder="Position" />
+    </div>
+    <button type="submit">{{ isEditing ? 'Update' : 'Add' }} Employee</button>
+    <button type="button" (click)="resetForm()">Reset</button>
+  </form>
+
+  <table>
+    <tr>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Position</th>
+      <th>Actions</th>
+    </tr>
+    <tr *ngFor="let employee of employees">
+      <td>{{ employee.name }}</td>
+      <td>{{ employee.email }}</td>
+      <td>{{ employee.position }}</td>
+      <td>
+        <button (click)="selectEmployee(employee)">Edit</button>
+        <button (click)="deleteEmployee(employee.id!)">Delete</button>
+      </td>
+    </tr>
+  </table>
+</div>
